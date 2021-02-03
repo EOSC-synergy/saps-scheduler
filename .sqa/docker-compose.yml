@@ -9,4 +9,10 @@ services:
      - type: bind
        source: ./saps-scheduler
        target: /saps-scheduler-repo
+     - type: bind
+       source: ./saps-catalog
+       target: /saps-catalog-repo
+     - type: bind
+       source: ./saps-common
+       target: /saps-common-repo
     command: sleep 3600
