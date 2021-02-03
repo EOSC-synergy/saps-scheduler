@@ -4,6 +4,12 @@ config:
     saps-scheduler:
       repo: 'https://github.com/EOSC-synergy/saps-scheduler'
       branch: develop
+    saps-common:
+      repo: 'https://github.com/EOSC-synergy/saps-common'
+      branch: develop
+    saps-catalog:
+      repo: 'https://github.com/EOSC-synergy/saps-catalog'
+      branch: develop
 
 sqa_criteria:
    qc_style:
@@ -12,6 +18,7 @@ sqa_criteria:
          container: scheduler-testing
          commands:
          # saps-scheduler has saps-common and saps-catalog as dependences and must be installed
+           - mvn -f /saps-common-repo/pom.xml install
            - mvn -f /saps-catalog-repo/pom.xml install
            - mvn -f /saps-scheduler-repo/pom.xml checkstyle:checkstyle
    qc_coverage:
