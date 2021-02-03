@@ -11,6 +11,8 @@ sqa_criteria:
        saps-scheduler:
          container: scheduler-testing
          commands:
+         # saps-scheduler has saps-common and saps-catalog as dependences and must be installed
+           - mvn -f /saps-catalog-repo/pom.xml install
            - mvn -f /saps-scheduler-repo/pom.xml checkstyle:checkstyle
    qc_coverage:
      repos:
