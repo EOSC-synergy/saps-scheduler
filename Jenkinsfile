@@ -8,6 +8,12 @@ pipeline {
 
     stages {
         stage('SQA baseline dynamic stages') {
+            when {
+                anyOf {
+                    branch 'develop'
+                    branch 'sqa'
+                }
+            }
             steps {
                 script {
                     projectConfig = pipelineConfig()
