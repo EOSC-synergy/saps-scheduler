@@ -16,3 +16,13 @@ services:
        source: ./saps-common
        target: /saps-common-repo
     command: sleep 3600
+
+  scheduler-docs:
+    image: "sphinxdoc/sphinx"
+    container_name: scheduler-docs
+    hostname: scheduler-docs
+    volumes:
+     - type: bind
+       source: ./saps-scheduler
+       target: /saps-sheduler-repo
+    command: sleep 3600
