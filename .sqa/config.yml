@@ -28,3 +28,11 @@ sqa_criteria:
          commands:
            - mvn -f /saps-scheduler-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-scheduler-repo/pom.xml test
+
+   qc_doc:
+     repos:
+       saps-scheduler:
+         container: scheduler-docs
+         commands:
+           - pip install recommonmark
+           - make html -C /saps-scheduler-repo/docs/
