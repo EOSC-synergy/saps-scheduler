@@ -29,6 +29,14 @@ sqa_criteria:
            - mvn -f /saps-scheduler-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-scheduler-repo/pom.xml test
 
+   qc_doc:
+     repos:
+       saps-scheduler:
+         container: scheduler-docs
+         commands:
+           - pip install recommonmark
+           - make html -C /saps-scheduler-repo/docs/
+
    qc_security:
      repos:
        saps-scheduler:
@@ -38,14 +46,7 @@ sqa_criteria:
            - tar -xzvf spotbugs-maven-plugin-4.2.0.tar.gz 
            - mvn install -f spotbugs-maven-plugin-spotbugs-maven-plugin-4.2.0/
            #- mvn -f /saps-scheduler-repo/pom.xml -B -DskipTests clean package
-           - mvn -f /saps-scheduler-repo/pom.xml spotbugs:spotbugs
-           #- mvn  -f /saps-scheduler-repo/pom.xml compile site
+           #- mvn -f /saps-scheduler-repo/pom.xml spotbugs:spotbugs
+           - mvn  -f /saps-scheduler-repo/pom.xml compile site
 
-   qc_doc:
-     repos:
-       saps-scheduler:
-         container: scheduler-docs
-         commands:
-           - pip install recommonmark
-           - make html -C /saps-scheduler-repo/docs/
 
