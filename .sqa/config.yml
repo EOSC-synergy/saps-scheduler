@@ -34,9 +34,10 @@ sqa_criteria:
        saps-scheduler:
          container: scheduler-testing
          commands:
-           #- wget https://github.com/spotbugs/spotbugs/releases/download/4.2.1/spotbugs-4.2.1.tgz
+           - apk add --update openssl
+           - wget https://github.com/spotbugs/spotbugs/releases/download/4.2.1/spotbugs-4.2.1.tgz
            #https://oss.sonatype.org/content/repositories/snapshots/com/github/spotbugs/spotbugs-maven-plugin/4.2.1-SNAPSHOT/
-           #- tar -xzvf spotbugs-4.2.1.tgz
+           - tar -xzvf spotbugs-4.2.1.tgz
            #- mvn -f /saps-scheduler-repo/pom.xml -B -DskipTests clean package
            #- mvn -f /saps-scheduler-repo/pom.xml spotbugs:spotbugs
            - mvn  -f /saps-scheduler-repo/pom.xml compile site
