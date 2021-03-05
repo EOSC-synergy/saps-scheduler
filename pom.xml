@@ -123,20 +123,6 @@
 						</dependency>
 					</dependencies>
 				</plugin>
-				<plugin>
-					<!--Full name: com.github.spotbugs:spotbugs-maven-plugin:4.2.1-SNAPSHOT:spotbugs -->
-					<groupId>com.github.spotbugs</groupId>
-					<artifactId>spotbugs-maven-plugin</artifactId>
-					<version>4.2.0-SNAPSHOT</version>
-					<dependencies>
-					<!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
-						<dependency>
-							<groupId>com.github.spotbugs</groupId>
-							<artifactId>spotbugs</artifactId>
-							<version>4.2.0</version>
-						</dependency>
-					</dependencies>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -354,6 +340,20 @@
             				</reportSet>
           			</reportSets>
         		</plugin>
+			<plugin>
+				<!--Full name: com.github.spotbugs:spotbugs-maven-plugin:4.2.1-SNAPSHOT:spotbugs -->
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.2.0-SNAPSHOT</version>
+				<!-- <dependencies>
+				<!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs 
+					<dependency>
+						<groupId>com.github.spotbugs</groupId>
+						<artifactId>spotbugs</artifactId>
+						<version>4.2.0</version>
+					</dependency>
+				</dependencies> -->
+			</plugin>
      		</plugins>
     	</reporting>
 </project>
