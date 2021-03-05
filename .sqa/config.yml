@@ -45,8 +45,9 @@ sqa_criteria:
            - wget https://github.com/spotbugs/spotbugs-maven-plugin/archive/spotbugs-maven-plugin-4.2.0.tar.gz
            - tar -xzvf spotbugs-maven-plugin-4.2.0.tar.gz 
            - mvn install -f spotbugs-maven-plugin-spotbugs-maven-plugin-4.2.0/
+           - mvn -DtestSrc=local -DlocalTestSrc=/opt/spotBugs -Prun-its clean install -D"invoker.parallelThreads=4"
            #- mvn -f /saps-scheduler-repo/pom.xml -B -DskipTests clean package
            #- mvn -f /saps-scheduler-repo/pom.xml spotbugs:spotbugs
-           - mvn  -f /saps-scheduler-repo/pom.xml compile site
+           #- mvn  -f /saps-scheduler-repo/pom.xml compile site
 
 
